@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\_dotNet\JwtAngularScaffold" t="IncludeFlat">
+      <e p="JwtAngularScaffold" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="ClientApp" t="Include">
+          <e p=".editorconfig" t="Include" />
+          <e p=".gitignore" t="Include" />
+          <e p="angular.json" t="Include" />
+          <e p="e2e" t="Include">
+            <e p="app.e2e-spec.ts" t="Include" />
+            <e p="app.po.ts" t="Include" />
+            <e p="tsconfig.e2e.json" t="Include" />
+          </e>
+          <e p="karma.conf.js" t="Include" />
+          <e p="package-lock.json" t="Include" />
+          <e p="package.json" t="Include" />
+          <e p="protractor.conf.js" t="Include" />
+          <e p="README.md" t="Include" />
+          <e p="src" t="Include">
+            <e p="app" t="Include">
+              <e p="app.component.css" t="Include" />
+              <e p="app.component.html" t="Include" />
+              <e p="app.component.ts" t="Include" />
+              <e p="app.module.ts" t="Include" />
+              <e p="auth" t="Include">
+                <e p="auth.guard.ts" t="Include" />
+                <e p="http-interceptor.module.ts" t="Include" />
+              </e>
+              <e p="customers" t="Include">
+                <e p="customers.component.css" t="Include" />
+                <e p="customers.component.html" t="Include" />
+                <e p="customers.component.ts" t="Include" />
+              </e>
+              <e p="home" t="Include">
+                <e p="home.component.css" t="Include" />
+                <e p="home.component.html" t="Include" />
+                <e p="home.component.ts" t="Include" />
+              </e>
+              <e p="login" t="Include">
+                <e p="login.component.css" t="Include" />
+                <e p="login.component.html" t="Include" />
+                <e p="login.component.ts" t="Include" />
+              </e>
+              <e p="sales" t="Include">
+                <e p="sales.component.css" t="Include" />
+                <e p="sales.component.html" t="Include" />
+                <e p="sales.component.ts" t="Include" />
+              </e>
+            </e>
+            <e p="assets" t="Include">
+              <e p=".gitkeep" t="Include" />
+            </e>
+            <e p="environments" t="Include">
+              <e p="environment.prod.ts" t="Include" />
+              <e p="environment.ts" t="Include" />
+            </e>
+            <e p="index.html" t="Include" />
+            <e p="main.ts" t="Include" />
+            <e p="polyfills.ts" t="Include" />
+            <e p="styles.css" t="Include" />
+            <e p="test.ts" t="Include" />
+            <e p="tsconfig.app.json" t="Include" />
+            <e p="tsconfig.spec.json" t="Include" />
+            <e p="typings.d.ts" t="Include" />
+          </e>
+          <e p="tsconfig.json" t="Include" />
+          <e p="tslint.json" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AuthController.cs" t="Include" />
+        </e>
+        <e p="Identity" t="Include">
+          <e p="LoginModel.cs" t="Include" />
+        </e>
+        <e p="JwtAngularScaffold.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="entities" t="Include">
+            <e p="User.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="JwtAngularScaffold.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="_ViewImports.cshtml" t="Include" />
+          <e p="Error.cshtml" t="Include" />
+          <e p="Error.cshtml.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="favicon.ico" t="Include" />
+        </e>
+      </e>
+      <e p="JwtAngularScaffold.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\Webmaster\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_JwtAngularScaffold.1318154856.00" t="ExcludeRecursive" />
+  </component>
+</project>

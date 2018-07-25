@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">ASP.NET Core - JWT - Angular</a>
+    <form class="form-inline">
+      <button class="btn btn-primary my-2 my-sm-0 mr-2"
+              routerLink="/" type="button">
+        Home
+      </button>
+      <button class="btn btn-primary my-2 my-sm-0 mr-2"
+              routerLink="/customers" type="button">
+        Customers
+      </button>
+      <button class="btn btn-primary my-2 my-sm-0 mr-2"
+              routerLink="/sales" type="button">
+        Sales
+      </button>
+      <button
+        class="btn btn-primary my-2 my-sm-0"
+        *ngIf="!isUserAuthenticated()"
+        routerLink="/login" type="button">
+        Login
+      </button>
+      <button
+        class="btn btn-primary my-2 my-sm-0"
+        *ngIf="isUserAuthenticated()"
+        (click)="logOut()" type="button">
+        Logout
+      </button>
+    </form>
+  </div>
+</nav>
+
+<div class="text-center">
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <div *ngIf="isUserAuthenticated()">
+        <h3>
+          You are logged in
+        </h3>
+      </div>
+    </li>
+  </ul>
+</div>
