@@ -10,6 +10,17 @@
         <e p="ClientApp" t="Include">
           <e p=".editorconfig" t="Include" />
           <e p=".gitignore" t="Include" />
+          <e p=".idea" t="Include">
+            <e p="ClientApp.iml" t="Include" />
+            <e p="codeStyles" t="Include">
+              <e p="codeStyleConfig.xml" t="Include" />
+              <e p="Project.xml" t="Include" />
+            </e>
+            <e p="dbnavigator.xml" t="Include" />
+            <e p="misc.xml" t="Include" />
+            <e p="modules.xml" t="Include" />
+            <e p="workspace.xml" t="Include" />
+          </e>
           <e p="angular.json" t="Include" />
           <e p="e2e" t="Include">
             <e p="app.e2e-spec.ts" t="Include" />
@@ -36,6 +47,9 @@
                 <e p="customers.component.html" t="Include" />
                 <e p="customers.component.ts" t="Include" />
               </e>
+              <e p="Helpers" t="Include">
+                <e p="constants.ts" t="Include" />
+              </e>
               <e p="home" t="Include">
                 <e p="home.component.css" t="Include" />
                 <e p="home.component.html" t="Include" />
@@ -46,10 +60,22 @@
                 <e p="login.component.html" t="Include" />
                 <e p="login.component.ts" t="Include" />
               </e>
+              <e p="Models" t="Include">
+                <e p="login.model.ts" t="Include" />
+                <e p="user.model.ts" t="Include" />
+              </e>
               <e p="sales" t="Include">
                 <e p="sales.component.css" t="Include" />
                 <e p="sales.component.html" t="Include" />
                 <e p="sales.component.ts" t="Include" />
+              </e>
+              <e p="services" t="Include">
+                <e p="user.service.ts" t="Include" />
+              </e>
+              <e p="signup" t="Include">
+                <e p="signup.component.css" t="Include" />
+                <e p="signup.component.html" t="Include" />
+                <e p="signup.component.ts" t="Include" />
               </e>
             </e>
             <e p="assets" t="Include">
@@ -71,8 +97,17 @@
           <e p="tsconfig.json" t="Include" />
           <e p="tslint.json" t="Include" />
         </e>
+        <e p="Contracts" t="Include">
+          <e p="IUserRepository.cs" t="Include" />
+        </e>
         <e p="Controllers" t="Include">
           <e p="AuthController.cs" t="Include" />
+          <e p="RegisterController.cs" t="Include" />
+          <e p="UsersController.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="AppException.cs" t="Include" />
+          <e p="AutoMapperProfiles.cs" t="Include" />
         </e>
         <e p="Identity" t="Include">
           <e p="LoginModel.cs" t="Include" />
@@ -80,6 +115,9 @@
         <e p="JwtAngularScaffold.csproj" t="IncludeRecursive" />
         <e p="Models" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
+          <e p="Dtos" t="Include">
+            <e p="UserDto.cs" t="Include" />
+          </e>
           <e p="entities" t="Include">
             <e p="User.cs" t="Include" />
           </e>
@@ -99,6 +137,9 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="UserRepository.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="wwwroot" t="Include">

@@ -1,8 +1,11 @@
 using System.Net.Mime;
 using System.Text;
+using AutoMapper;
+using JwtAngularScaffold.Contracts;
 using JwtAngularScaffold.Identity;
-using JwtAngularScaffold.Identity.Entities;
 using JwtAngularScaffold.Models;
+using JwtAngularScaffold.Models.Entities;
+using JwtAngularScaffold.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +31,8 @@ namespace JwtAngularScaffold
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var key = Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Secret").Value);
+                
             // IN-MEMORY PROVIDER
             // TODO: Comment out the line below and the GetRequiredService inside Configure() to swap with a real database in production
             services.AddDbContext<ApplicationDbContext>(option => option.UseInMemoryDatabase("TestData"));
@@ -48,10 +53,12 @@ namespace JwtAngularScaffold
 
                         ValidIssuer = "https://localhost:5001",
                         ValidAudience = "https://localhost:5001",
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretdevlin@12345"))
+                        IssuerSigningKey = new SymmetricSecurityKey(key)
                     };
                 });
 
+            services.AddAutoMapper();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the Angular files will be served from this directory
@@ -107,9 +114,7 @@ namespace JwtAngularScaffold
 public static class TestData
 {
     public static void AddTestData(ApplicationDbContext context)
-    {
-        context.Add(new User { UserName = "devlin", Email = "devlin@gmail.com", Password = "Password1"});
-        
+    {        
         context.SaveChanges();
     }
 }

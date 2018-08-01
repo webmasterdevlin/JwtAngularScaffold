@@ -1,4 +1,4 @@
-﻿using JwtAngularScaffold.Identity.Entities;
+﻿using JwtAngularScaffold.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace JwtAngularScaffold.Models

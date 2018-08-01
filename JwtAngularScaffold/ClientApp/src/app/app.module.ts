@@ -12,6 +12,8 @@ import {AuthGuard} from './auth/auth.guard';
 import {JwtHelper} from 'angular2-jwt';
 import {HttpInterceptorModule} from './auth/http-interceptor.module';
 import { SalesComponent } from './sales/sales.component';
+import { SignupComponent } from './signup/signup.component';
+import {UserService} from './services/user.service';
 
 
 @NgModule({
@@ -21,6 +23,7 @@ import { SalesComponent } from './sales/sales.component';
     CustomersComponent,
     HomeComponent,
     SalesComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,11 +34,12 @@ import { SalesComponent } from './sales/sales.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'login', component: LoginComponent },
+      { path: 'signup', component: SignupComponent },
       { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
       { path: 'sales', component: SalesComponent, canActivate: [AuthGuard] },
     ])
   ],
-  providers: [JwtHelper, AuthGuard],
+  providers: [JwtHelper, AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
