@@ -5,8 +5,6 @@ using JwtAngularScaffold.Contracts;
 using JwtAngularScaffold.Helpers;
 using JwtAngularScaffold.Models;
 using JwtAngularScaffold.Models.Entities;
-using Microsoft.AspNetCore.Identity.UI.Pages.Account.Internal;
-using Microsoft.EntityFrameworkCore;
 using LoginModel = JwtAngularScaffold.Identity.LoginModel;
 
 namespace JwtAngularScaffold.Repositories
