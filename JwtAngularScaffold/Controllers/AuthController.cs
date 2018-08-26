@@ -5,11 +5,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using JwtAngularScaffold.Contracts;
+using JwtAngularScaffold.Helpers;
 using JwtAngularScaffold.Identity;
 using JwtAngularScaffold.Models;
 using JwtAngularScaffold.Models.Entities;
 using JwtAngularScaffold.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace JwtAngularScaffold.Controllers
@@ -19,11 +21,13 @@ namespace JwtAngularScaffold.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IUserRepository _repo;
+        private readonly AppSettings _appSettings;
 
-        public AuthController(ApplicationDbContext context, IUserRepository repo)
+        public AuthController(ApplicationDbContext context, IUserRepository repo, IOptions<AppSettings> appSettings)
         {
             _context = context;
             _repo = repo;
+            _appSettings = appSettings.Value;
         }
 
         // GET api/values
@@ -42,7 +46,7 @@ namespace JwtAngularScaffold.Controllers
                 return Unauthorized();
             }
 
-            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("secretdevlin@12345"));
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.Secret));
 
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 

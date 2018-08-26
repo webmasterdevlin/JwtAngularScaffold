@@ -188,6 +188,7 @@
         </e>
         <e p="Helpers" t="Include">
           <e p="AppException.cs" t="Include" />
+          <e p="AppSettings.cs" t="Include" />
           <e p="AutoMapperProfiles.cs" t="Include" />
         </e>
         <e p="Identity" t="Include">

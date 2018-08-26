@@ -15,6 +15,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using JwtAngularScaffold.Helpers;
 
 namespace JwtAngularScaffold
 {
@@ -30,6 +31,9 @@ namespace JwtAngularScaffold
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+            
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Secret").Value);
 
             // IN-MEMORY PROVIDER
