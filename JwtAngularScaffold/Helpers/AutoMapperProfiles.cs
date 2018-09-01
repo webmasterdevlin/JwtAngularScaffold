@@ -9,6 +9,7 @@ namespace JwtAngularScaffold.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<Department, DepartmentDto>().ReverseMap();
         }
     }
 }

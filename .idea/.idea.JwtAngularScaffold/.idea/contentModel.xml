@@ -198,6 +198,7 @@
         <e p="Models" t="Include">
           <e p="ApplicationDbContext.cs" t="Include" />
           <e p="Dtos" t="Include">
+            <e p="DepartmentDto.cs" t="Include" />
             <e p="UserDto.cs" t="Include" />
           </e>
           <e p="entities" t="Include">
