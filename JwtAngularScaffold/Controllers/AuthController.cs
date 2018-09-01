@@ -51,15 +51,14 @@ namespace JwtAngularScaffold.Controllers
             var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
             var tokenOptions = new JwtSecurityToken(
-                issuer: "https://localhost:5001", // This parameter is a simple string representing the name of the web server that issues the token
-                audience: "https://localhost:5001", // This parameter is a string value representing valid recipients
+                issuer: "http://localhost:5001", // This parameter is a simple string representing the name of the web server that issues the token
+                audience: "http://localhost:5001", // This parameter is a string value representing valid recipients
                 claims: new
                     List<Claim> // This is list of user roles, for example, the user can be an admin, manager or author 
                     {
                         new Claim("", ""), // TODO: Add claims
                     },
-                expires: DateTime.UtcNow
-                    .AddDays(1), // DateTime object that represents the date and time after which the token expires
+                expires: DateTime.UtcNow.AddDays(7), // DateTime object that represents the date and time after which the token expires
                 signingCredentials: signinCredentials
             );
 
