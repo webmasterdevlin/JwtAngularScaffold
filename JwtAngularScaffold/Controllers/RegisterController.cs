@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Threading.Tasks;
+using AutoMapper;
 using JwtAngularScaffold.Contracts;
 using JwtAngularScaffold.Helpers;
 using JwtAngularScaffold.Models.Dtos;
@@ -20,8 +21,7 @@ namespace JwtAngularScaffold.Controllers
         }
         
         [HttpPost]
-        [Route("signup")]
-        public IActionResult Signup([FromBody]UserDto userDto)
+        public async Task<IActionResult> Register([FromBody]UserDto userDto)
         {
             // map dto to entity
             var user = _mapper.Map<User>(userDto);
@@ -29,7 +29,7 @@ namespace JwtAngularScaffold.Controllers
             try
             {
                 // save 
-                _repo.Create(user, userDto.Password);
+                await _repo.CreateAsync(user, userDto.Password);
                 return Ok();
             } 
             catch(AppException ex)

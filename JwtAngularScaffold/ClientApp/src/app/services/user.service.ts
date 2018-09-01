@@ -31,7 +31,7 @@ export class UserService {
   }
 
   signup(user: User): Observable<any> {
-    return this.http.post<User>(Const.signupUrl, user, {
+    return this.http.post<User>(Const.registerUrl, user, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })

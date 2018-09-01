@@ -179,10 +179,12 @@
           <e p="tslint.json" t="Include" />
         </e>
         <e p="Contracts" t="Include">
+          <e p="IDepartmentRepository.cs" t="Include" />
           <e p="IUserRepository.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="AuthController.cs" t="Include" />
+          <e p="DepartmentController.cs" t="Include" />
           <e p="RegisterController.cs" t="Include" />
           <e p="UsersController.cs" t="Include" />
         </e>
@@ -223,6 +225,7 @@
           <e p="launchSettings.json" t="Include" />
         </e>
         <e p="Repositories" t="Include">
+          <e p="DepartmentRepository.cs" t="Include" />
           <e p="UserRepository.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />

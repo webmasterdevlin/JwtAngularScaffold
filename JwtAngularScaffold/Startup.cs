@@ -62,6 +62,7 @@ namespace JwtAngularScaffold
 
             services.AddAutoMapper();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>

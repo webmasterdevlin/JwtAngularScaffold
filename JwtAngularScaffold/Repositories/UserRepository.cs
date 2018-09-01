@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using JwtAngularScaffold.Contracts;
 using JwtAngularScaffold.Helpers;
 using JwtAngularScaffold.Models;
@@ -44,7 +45,7 @@ namespace JwtAngularScaffold.Repositories
             return _context.Users.Find(id);
         }
 
-        public User Create(User user, string password)
+        public async Task<User> CreateAsync(User user, string password)
         {
             // validation
             if (string.IsNullOrWhiteSpace(password))
@@ -59,12 +60,12 @@ namespace JwtAngularScaffold.Repositories
             user.PasswordSalt = passwordSalt;
 
             _context.Users.Add(user);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return user;
         }
 
-        public void Update(User user, string password = null)
+        public async Task<User> UpdateAsync(User user, string password = null)
         {
             var userEntity = _context.Users.Find(user.Id);
 
@@ -91,15 +92,16 @@ namespace JwtAngularScaffold.Repositories
             }
 
             _context.Users.Update(userEntity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+            return user;
         }
 
-        public void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
             var user = _context.Users.Find(id);
             if (user == null) return;
             _context.Users.Remove(user);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         // private helper methods
