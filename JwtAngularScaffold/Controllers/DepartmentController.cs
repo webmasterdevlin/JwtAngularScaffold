@@ -12,9 +12,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JwtAngularScaffold.Controllers
 {
-    [Authorize]
     [Produces("application/json")]
     [Route("api/departments")]
+    [Authorize]
     public class DepartmentController : Controller
     {
         private readonly IDepartmentRepository _repo;
@@ -35,16 +35,21 @@ namespace JwtAngularScaffold.Controllers
         }
 
         [HttpGet("{id}")] // GET: api/departments/1
-        public IActionResult GetDepartmnet([FromRoute] int id)
+        public IActionResult GetDepartment([FromRoute] int id)
         {
             var department = _repo.GetById(id);
             var departmentToReturn = _mapper.Map<DepartmentDto>(department);
             return Ok(departmentToReturn);
         }
 
-        [HttpPost] // GET: api/departments
+        [HttpPost] // POST: api/departments
         public async Task<IActionResult> CreateDepartment([FromBody] Department department)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            
             await _repo.CreateAsync(department);
             return Ok();
         }
@@ -74,7 +79,7 @@ namespace JwtAngularScaffold.Controllers
             return NoContent();
         }
 
-        [HttpDelete] // DELETE: api/departments/1
+        [HttpDelete("{id}")] // DELETE: api/departments/1
         public async Task<IActionResult> DeleteDepartment([FromRoute] int id)
         {
            await _repo.DeleteAsync(id);

@@ -31,6 +31,7 @@ namespace JwtAngularScaffold
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+//            services.AddCors();
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
             
@@ -54,8 +55,8 @@ namespace JwtAngularScaffold
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
 
-                        ValidIssuer = "https://localhost:5001",
-                        ValidAudience = "https://localhost:5001",
+                        ValidIssuer = "http://localhost:5000",
+                        ValidAudience = "http://localhost:5000",
                         IssuerSigningKey = new SymmetricSecurityKey(key)
                     };
                 });
@@ -108,6 +109,8 @@ namespace JwtAngularScaffold
         {
             if (env.IsDevelopment())
             {
+//                app.UseCors(b => b.AllowAnyHeader().AllowCredentials().AllowAnyMethod().AllowAnyOrigin());
+
                 app.UseDeveloperExceptionPage();
                 // In-Memory seeding of data
                 // TODO: Comment out the two lines below when switching to real database
@@ -117,15 +120,16 @@ namespace JwtAngularScaffold
             else
             {
                 app.UseExceptionHandler("/Error");
-                app.UseHsts();
+//                app.UseHsts();
             }
+            
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Own API V1"); });
-            app.UseHttpsRedirection();
+//            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.UseAuthentication();
@@ -133,6 +137,7 @@ namespace JwtAngularScaffold
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    
                     name: "default",
                     template: "{controller}/{action=Index}/{id?}");
             });
