@@ -9,6 +9,7 @@ using JwtAngularScaffold.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace JwtAngularScaffold.Controllers
 {
@@ -43,8 +44,12 @@ namespace JwtAngularScaffold.Controllers
         }
 
         [HttpPost] // POST: api/departments
-        public async Task<IActionResult> CreateDepartment([FromBody] Department department)
+        public async Task<IActionResult> CreateDepartment([FromBody] Object obj)
         {
+            var jsonString = JsonConvert.SerializeObject(obj);
+
+            var department = JsonConvert.DeserializeObject<Department>(jsonString);
+            
             if (!ModelState.IsValid)
             {
                 return BadRequest();
