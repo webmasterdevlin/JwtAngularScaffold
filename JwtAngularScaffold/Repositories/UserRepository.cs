@@ -21,7 +21,7 @@ namespace JwtAngularScaffold.Repositories
 
         public User Authenticate(LoginModel model)
         {
-            if (string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Password)) return null;
+            if (string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password)) return null;
 
             var userEntity = _context.Users.SingleOrDefault(c =>
                 (c.UserName == model.UserName || c.Email == model.Email) && c.Password == model.Password);
