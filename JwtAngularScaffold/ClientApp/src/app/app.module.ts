@@ -14,6 +14,7 @@ import {HttpInterceptorModule} from './auth/http-interceptor.module';
 import { SalesComponent } from './sales/sales.component';
 import { SignupComponent } from './signup/signup.component';
 import {UserService} from './services/user.service';
+import { DepartmentsComponent } from './departments/departments.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import {UserService} from './services/user.service';
     HomeComponent,
     SalesComponent,
     SignupComponent,
+    DepartmentsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import {UserService} from './services/user.service';
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
+      { path: 'departments', component: DepartmentsComponent, canActivate: [AuthGuard] },
       { path: 'sales', component: SalesComponent, canActivate: [AuthGuard] },
     ])
   ],

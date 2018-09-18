@@ -3,7 +3,7 @@ import { UserService } from "../services/user.service";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { User } from "../models/user.model";
+import { UserModel } from "../models/user.model";
 
 @Component({
   selector: "app-signup",
@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
   }
 
   private sendSignupForm(): void {
-    const user = <User>this.signupForm.value;
+    const user = <UserModel>this.signupForm.value;
     this.userService.signup(user).subscribe(response => {
       this.router.navigate(["/"]);
     });

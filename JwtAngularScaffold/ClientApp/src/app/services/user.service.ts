@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {User} from '../models/user.model';
+import {UserModel} from '../models/user.model';
 import {Const} from '../helpers/constants';
 import {Observable} from 'rxjs';
 import {NgForm} from '@angular/forms';
@@ -30,8 +30,8 @@ export class UserService {
     })
   }
 
-  signup(user: User): Observable<any> {
-    return this.http.post<User>(Const.registerUrl, user, {
+  signup(user: UserModel): Observable<any> {
+    return this.http.post<UserModel>(Const.registerUrl, user, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })

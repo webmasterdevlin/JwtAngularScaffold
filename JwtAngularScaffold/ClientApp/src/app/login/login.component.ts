@@ -59,6 +59,15 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  reset() {
+    const response = prompt("Enter your email here");
+    if (response) {
+      alert("Please check your email");
+      return;
+    }
+    alert("Please try again");
+  }
+
   back(): void {
     this.location.back();
   }
