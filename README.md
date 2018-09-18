@@ -1,2 +1,2 @@
-# JwtAngularScaffold: Backend service of OfficeApp Xamarin Forms and NativeScript
+# JwtAngularScaffold: Backend service of my OfficeApp Xamarin.Forms, NativeScript, and Angular 6 within the JwtAngularScaffold
 JWT with In-Memory provider using ASP.NET Core Angular SPA template
