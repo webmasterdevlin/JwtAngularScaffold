@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../services/user.service";
+import { UserService } from "../../services/user.service";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { UserModel } from "../models/user.model";
+import { UserModel } from "../../models/user.model";
 
 @Component({
   selector: "app-signup",

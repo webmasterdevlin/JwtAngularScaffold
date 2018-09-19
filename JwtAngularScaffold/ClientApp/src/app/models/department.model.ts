@@ -1,5 +1,5 @@
 export class DepartmentModel {
-  id: number;
+  id: string;
   name:	string;
   description:	string;
   head:	string;

@@ -15,7 +15,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem("bearerToken");
+    const token = localStorage.getItem("jwt");
 
     if (token) {
       const newReq = req.clone({
@@ -25,6 +25,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
       return next.handle(newReq);
     } else {
       console.log("not intercepted http request");
+      console.log("TOKEN ",token);
       return next.handle(req);
     }
   }

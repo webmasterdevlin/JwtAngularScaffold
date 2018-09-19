@@ -1,0 +1,22 @@
+<table class="table table-dark" *ngFor="let department of department$ | async">
+  <thead>
+  <tr class="header">
+    <th scope="col">#CODE</th>
+    <th scope="col">NAME</th>
+    <th scope="col">DESCRIPTION</th>
+    <th scope="col">HEAD</th>
+  </tr>
+  </thead>
+  <tbody class="pointer">
+  <tr [routerLink]="['/edit-detail', department.id]">
+    <th scope="row">{{department.code}}</th>
+    <td>{{department.name}}</td>
+    <td>{{department.description}}</td>
+    <td>{{department.code}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="text-center m-5">
+  <button type="button" routerLink="/new-department" class="btn btn-primary btn-lg">Create New</button>
+</div>

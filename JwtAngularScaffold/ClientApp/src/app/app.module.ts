@@ -5,27 +5,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { CustomersComponent } from './customers/customers.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 import {AuthGuard} from './auth/auth.guard';
 import {JwtHelper} from 'angular2-jwt';
 import {HttpInterceptorModule} from './auth/http-interceptor.module';
-import { SalesComponent } from './sales/sales.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './components/signup/signup.component';
 import {UserService} from './services/user.service';
-import { DepartmentsComponent } from './departments/departments.component';
+import {DepartmentService} from './services/department.service';
+import { HeaderMenuComponent } from './components/header-menu/header-menu.component';
+import { NewDepartmentComponent } from './components/new-department/new-department.component';
+import { EditDepartmentComponent } from './components/edit-department/edit-department.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CustomersComponent,
     HomeComponent,
-    SalesComponent,
     SignupComponent,
-    DepartmentsComponent,
+    HeaderMenuComponent,
+    NewDepartmentComponent,
+    EditDepartmentComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,15 +35,15 @@ import { DepartmentsComponent } from './departments/departments.component';
     ReactiveFormsModule,
     HttpInterceptorModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent},
+      { path: '', pathMatch:'full', redirectTo:'/home'},
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
-      { path: 'customers', component: CustomersComponent, canActivate: [AuthGuard] },
-      { path: 'departments', component: DepartmentsComponent, canActivate: [AuthGuard] },
-      { path: 'sales', component: SalesComponent, canActivate: [AuthGuard] },
+      { path: 'new-department', component: NewDepartmentComponent },
+      {path: 'edit-detail/:id', component:EditDepartmentComponent},
+      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
     ])
   ],
-  providers: [JwtHelper, AuthGuard, UserService],
+  providers: [JwtHelper, AuthGuard, UserService, DepartmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

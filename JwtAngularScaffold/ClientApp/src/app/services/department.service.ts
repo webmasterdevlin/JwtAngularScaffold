@@ -17,8 +17,7 @@ export class DepartmentService {
       .get<DepartmentModel[]>(
         `${Const.departmentUrl}`,
         AuthBearer.options
-      )
-      .pipe(
+      ).pipe(
         catchError((err: HttpErrorResponse) => {
           return throwError(new Error(err.message));
         })
@@ -39,7 +38,7 @@ export class DepartmentService {
 
   postDepartment(department: DepartmentModel): Observable<any> {
     return this._httpClient
-      .post(
+      .post<DepartmentModel>(
         `${Const.departmentUrl}`,
         department
       )
@@ -51,8 +50,9 @@ export class DepartmentService {
   }
 
   putDepartment(department: DepartmentModel): Observable<any> {
+    console.log("DEPT ID IS ",department.id)
     return this._httpClient
-      .put(
+      .put<DepartmentModel>(
         `${Const.departmentUrl}${
           department.id
           }`,
@@ -67,7 +67,7 @@ export class DepartmentService {
 
   deleteDepartment(id: string): Observable<any> {
     return this._httpClient
-      .delete(
+      .delete<DepartmentModel>(
         `${Const.departmentUrl}${id}`
       )
       .pipe(

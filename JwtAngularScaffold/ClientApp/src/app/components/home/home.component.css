@@ -1,0 +1,31 @@
+@media (max-width: 575px) {
+  /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+  .body-content {
+    padding-top: 60px;
+  }
+}
+
+.pointer {
+  cursor:pointer;
+}
+
+.header {
+  color: darkorange;
+}
+
+.name {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.description {
+  color: darkgreen;
+}
+
+.head {
+  color: indigo;
+}
+
+.code {
+  color: crimson;
+}

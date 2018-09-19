@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, NgForm } from "@angular/forms";
 import { Location } from "@angular/common";
-import { UserService } from "../services/user.service";
-import { LoginModel } from "../models/login.model";
+import { UserService } from "../../services/user.service";
+import { LoginModel } from "../../models/login.model";
 
 @Component({
   selector: "app-login",

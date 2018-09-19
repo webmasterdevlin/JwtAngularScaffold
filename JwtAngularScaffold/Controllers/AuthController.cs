@@ -59,7 +59,8 @@ namespace JwtAngularScaffold.Controllers
                     {
                         new Claim("", ""), // TODO: Add claims
                     },
-                expires: DateTime.UtcNow.AddDays(7), // DateTime object that represents the date and time after which the token expires
+                expires: DateTime.UtcNow
+                    .AddDays(7), // DateTime object that represents the date and time after which the token expires
                 signingCredentials: signinCredentials
             );
 
