@@ -1,0 +1,33 @@
+<div class="container">
+  <h2 class="text-center m-5">Update/Delete Department</h2>
+  <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="e.g. HR" autocomplete="false"
+               formControlName="name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="e.g. Human Resource" autocomplete="false"
+               formControlName="description">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="head">Head</label>
+        <input type="text" class="form-control" id="head" placeholder="e.g. Walter White" autocomplete="false"
+               formControlName="head">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" id="code" placeholder="e.g. THL021"
+               autocomplete="false" formControlName="code">
+      </div>
+    </div>
+    <div class="m-5">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Save</button>
+    </div>
+    <div class="text-center">
+      <strong>Values to be sent: </strong><span>{{departmentForm.value | json}}</span>
+    </div>
+  </form>
+</div>

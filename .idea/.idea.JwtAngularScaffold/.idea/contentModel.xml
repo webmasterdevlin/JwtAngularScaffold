@@ -121,16 +121,8 @@
                 <e p="http-interceptor.module.ts" t="Include" />
               </e>
               <e p="components" t="Include">
-                <e p="edit-department" t="Include">
-                  <e p="edit-department.component.css" t="Include" />
-                  <e p="edit-department.component.html" t="Include" />
-                  <e p="edit-department.component.ts" t="Include" />
-                </e>
-                <e p="header-menu" t="Include">
-                  <e p="header-menu.component.css" t="Include" />
-                  <e p="header-menu.component.html" t="Include" />
-                  <e p="header-menu.component.ts" t="Include" />
-                </e>
+                <e p="edit-department" t="Include" />
+                <e p="header-menu" t="Include" />
                 <e p="home" t="Include">
                   <e p="home.component.css" t="Include" />
                   <e p="home.component.html" t="Include" />
@@ -141,11 +133,7 @@
                   <e p="login.component.html" t="Include" />
                   <e p="login.component.ts" t="Include" />
                 </e>
-                <e p="new-department" t="Include">
-                  <e p="new-department.component.css" t="Include" />
-                  <e p="new-department.component.html" t="Include" />
-                  <e p="new-department.component.ts" t="Include" />
-                </e>
+                <e p="new-department" t="Include" />
                 <e p="signup" t="Include">
                   <e p="signup.component.css" t="Include" />
                   <e p="signup.component.html" t="Include" />

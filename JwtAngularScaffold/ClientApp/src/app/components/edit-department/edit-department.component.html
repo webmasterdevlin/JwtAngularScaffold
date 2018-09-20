@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="text-center m-5">Update/Delete Department</h2>
+  <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="e.g. HR" autocomplete="false"
+               formControlName="name"
+               [(ngModel)]="department.name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="e.g. Human Resource" autocomplete="false"
+               formControlName="description"
+               [(ngModel)]="department.description">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="head">Head</label>
+        <input type="text" class="form-control" id="head" placeholder="e.g. Walter White" autocomplete="false"
+               formControlName="head"
+               [(ngModel)]="department.head">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="code">Code</label>
+        <input type="text" class="form-control" id="code" placeholder="e.g. THL021"
+               autocomplete="false" formControlName="code" [(ngModel)]="department.code">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <button type="submit" class="btn btn-warning col m-5">Update</button>
+        <button type="button" class="btn btn-danger col m-5" (click)="deleteDepartment()">Remove</button>
+      </div>
+    </div>
+    <div class="text-center">
+      <strong>Values to be sent: </strong><span>{{departmentForm.value | json}}</span>
+    </div>
+  </form>
+</div>
