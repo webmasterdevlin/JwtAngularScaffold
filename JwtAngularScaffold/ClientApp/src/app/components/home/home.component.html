@@ -1,4 +1,4 @@
-<table class="table table-dark" *ngFor="let department of department$ | async">
+<table class="table table-dark" >
   <thead>
   <tr class="header">
     <th scope="col">#CODE</th>
@@ -8,7 +8,7 @@
   </tr>
   </thead>
   <tbody class="pointer">
-  <tr [routerLink]="['/edit-detail', department.id]">
+  <tr [routerLink]="['/edit-detail', department.id]" *ngFor="let department of department$ | async">
     <th scope="row">{{department.code}}</th>
     <td>{{department.name}}</td>
     <td>{{department.description}}</td>

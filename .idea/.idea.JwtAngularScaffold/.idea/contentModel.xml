@@ -36,7 +36,6 @@
             <e p="@angular/compiler" t="IncludeRecursive" />
             <e p="@angular/compiler-cli" t="IncludeRecursive" />
             <e p="@angular/core" t="IncludeRecursive" />
-            <e p="@angular/flex-layout" t="IncludeRecursive" />
             <e p="@angular/forms" t="IncludeRecursive" />
             <e p="@angular/http" t="IncludeRecursive" />
             <e p="@angular/platform-browser" t="IncludeRecursive" />
