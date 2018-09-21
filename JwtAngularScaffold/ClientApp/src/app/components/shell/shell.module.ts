@@ -5,13 +5,20 @@ import { NewDepartmentComponent } from "./new-department/new-department.componen
 import { EditDepartmentComponent } from "./edit-department/edit-department.component";
 import { RouterModule } from "@angular/router";
 import { AuthGuard } from "../../auth/auth.guard";
-import {DepartmentService} from '../../services/department.service';
+import { DepartmentService } from "../../services/department.service";
+import { HomeComponent } from "./home/home.component";
 
 @NgModule({
+  declarations: [
+    HomeComponent,
+    NewDepartmentComponent,
+    EditDepartmentComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+
     RouterModule.forChild([
       {
         path: "",
@@ -20,9 +27,14 @@ import {DepartmentService} from '../../services/department.service';
         canActivate: [AuthGuard]
       },
       {
-        path: "edit-department/#id",
+        path: "home",
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: "edit-detail/:id",
         component: EditDepartmentComponent,
-        canActivate:[AuthGuard]
+        canActivate: [AuthGuard]
       },
       {
         path: "new-department",
@@ -30,10 +42,6 @@ import {DepartmentService} from '../../services/department.service';
         canActivate: [AuthGuard]
       }
     ])
-  ],
-  declarations: [
-    NewDepartmentComponent,
-    EditDepartmentComponent
   ],
   providers: [DepartmentService]
 })

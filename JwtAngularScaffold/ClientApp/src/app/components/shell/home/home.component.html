@@ -8,7 +8,7 @@
   </tr>
   </thead>
   <tbody class="pointer">
-  <tr [routerLink]="['/edit-detail', department.id]" *ngFor="let department of department$ | async">
+  <tr  [routerLink]="['/edit-detail', department.id]" *ngFor="let department of department$ | async">
     <th scope="row">{{department.code}}</th>
     <td>{{department.name}}</td>
     <td>{{department.description}}</td>

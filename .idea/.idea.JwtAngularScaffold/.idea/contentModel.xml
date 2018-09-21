@@ -122,7 +122,6 @@
               </e>
               <e p="components" t="Include">
                 <e p="login" t="Include">
-                  <e p="login.component.css" t="Include" />
                   <e p="login.component.html" t="Include" />
                   <e p="login.component.ts" t="Include" />
                 </e>
@@ -149,10 +148,11 @@
                   </e>
                   <e p="shell-layout.component.html" t="Include" />
                   <e p="shell-layout.component.ts" t="Include" />
+                  <e p="shell.component.html" t="Include" />
+                  <e p="shell.component.ts" t="Include" />
                   <e p="shell.module.ts" t="Include" />
                 </e>
                 <e p="signup" t="Include">
-                  <e p="signup.component.css" t="Include" />
                   <e p="signup.component.html" t="Include" />
                   <e p="signup.component.ts" t="Include" />
                 </e>

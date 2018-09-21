@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
   private sendSignupForm(): void {
     const user = <UserModel>this.signupForm.value;
     this.userService.signup(user).subscribe(response => {
-      this.router.navigate(["/"]);
+      this.router.navigate(["/login"]);
     });
   }
 }

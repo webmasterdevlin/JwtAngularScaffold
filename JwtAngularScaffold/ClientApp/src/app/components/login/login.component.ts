@@ -50,11 +50,11 @@ export class LoginComponent implements OnInit {
         console.log("token has been stored locally");
 
         this.invalidLogin = false;
-        this.router.navigate(["/"]);
+        this.router.navigate(["/home"]);
       },
       err => {
         this.invalidLogin = true;
-        console.log("invalid login");
+        alert("invalid login");
       }
     );
   }
@@ -70,9 +70,5 @@ export class LoginComponent implements OnInit {
 
   back(): void {
     this.location.back();
-  }
-
-  getUrl() {
-    return "url('http://backgroundcheckall.com/wp-content/uploads/2017/12/blurred-office-background-1.jpg')";
   }
 }
