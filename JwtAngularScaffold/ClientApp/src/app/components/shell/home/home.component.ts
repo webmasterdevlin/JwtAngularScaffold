@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
 import {JwtHelper} from 'angular2-jwt';
 import {Router} from '@angular/router';
-import {DepartmentService} from '../../services/department.service';
+import {DepartmentService} from '../../../services/department.service';
 
 @Component({
   selector: 'app-home',

@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { DepartmentService } from "../../services/department.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { DepartmentModel } from "../../models/department.model";
 import { ISubscription } from "rxjs-compat/Subscription";
 import { Location } from "@angular/common";
+import {DepartmentModel} from '../../../models/department.model';
+import {DepartmentService} from '../../../services/department.service';
 
 @Component({
   selector: "app-edit-department",

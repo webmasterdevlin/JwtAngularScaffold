@@ -8,7 +8,7 @@ import { LoginModel } from "../../models/login.model";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  styleUrls: ["../../app.component.css"]
 })
 export class LoginComponent implements OnInit {
   invalidLogin: boolean;
@@ -70,5 +70,9 @@ export class LoginComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  getUrl() {
+    return "url('http://backgroundcheckall.com/wp-content/uploads/2017/12/blurred-office-background-1.jpg')";
   }
 }

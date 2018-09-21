@@ -121,19 +121,36 @@
                 <e p="http-interceptor.module.ts" t="Include" />
               </e>
               <e p="components" t="Include">
-                <e p="edit-department" t="Include" />
-                <e p="header-menu" t="Include" />
-                <e p="home" t="Include">
-                  <e p="home.component.css" t="Include" />
-                  <e p="home.component.html" t="Include" />
-                  <e p="home.component.ts" t="Include" />
-                </e>
                 <e p="login" t="Include">
                   <e p="login.component.css" t="Include" />
                   <e p="login.component.html" t="Include" />
                   <e p="login.component.ts" t="Include" />
                 </e>
-                <e p="new-department" t="Include" />
+                <e p="shell" t="Include">
+                  <e p="edit-department" t="Include">
+                    <e p="edit-department.component.css" t="Include" />
+                    <e p="edit-department.component.html" t="Include" />
+                    <e p="edit-department.component.ts" t="Include" />
+                  </e>
+                  <e p="header-menu" t="Include">
+                    <e p="header-menu.component.css" t="Include" />
+                    <e p="header-menu.component.html" t="Include" />
+                    <e p="header-menu.component.ts" t="Include" />
+                  </e>
+                  <e p="home" t="Include">
+                    <e p="home.component.css" t="Include" />
+                    <e p="home.component.html" t="Include" />
+                    <e p="home.component.ts" t="Include" />
+                  </e>
+                  <e p="new-department" t="Include">
+                    <e p="new-department.component.css" t="Include" />
+                    <e p="new-department.component.html" t="Include" />
+                    <e p="new-department.component.ts" t="Include" />
+                  </e>
+                  <e p="shell-layout.component.html" t="Include" />
+                  <e p="shell-layout.component.ts" t="Include" />
+                  <e p="shell.module.ts" t="Include" />
+                </e>
                 <e p="signup" t="Include">
                   <e p="signup.component.css" t="Include" />
                   <e p="signup.component.html" t="Include" />
@@ -157,6 +174,9 @@
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
+              <e p="images" t="Include">
+                <e p="officebg.jpeg" t="Include" />
+              </e>
             </e>
             <e p="environments" t="Include">
               <e p="environment.prod.ts" t="Include" />

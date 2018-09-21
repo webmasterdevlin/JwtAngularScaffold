@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {DepartmentModel} from '../../models/department.model';
+
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Location} from '@angular/common';
-import {DepartmentService} from '../../services/department.service';
+import {DepartmentModel} from '../../../models/department.model';
+import {DepartmentService} from '../../../services/department.service';
 
 @Component({
   selector: 'app-new-department',

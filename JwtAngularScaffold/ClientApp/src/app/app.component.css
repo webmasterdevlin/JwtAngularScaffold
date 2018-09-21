@@ -4,3 +4,25 @@
     padding-top: 60px;
   }
 }
+
+.login-signup-bg{
+  background: url("assets/images/officebg.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 10%;
+  padding-bottom: 20%;
+}
+
+.outside-form {
+  color: cornsilk;
+}
+.outside-form a {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.opaq {
+  opacity: 0.92;
+}

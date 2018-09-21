@@ -1,41 +1,47 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <div class="card border-secondary">
-            <div class="card-header">
-              <h3 class="mb-0 my-2">Login Page</h3>
+<div class="login-signup-bg">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card border-secondary opaq">
+              <div class="card-header">
+                <h3 class="mb-0 my-2">Login Page</h3>
+              </div>
+              <form class="card-body form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input formControlName="email" type="text" class="form-control" placeholder="john@yahoo.com"
+                         autocomplete="false">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input formControlName="password" type="password" class="form-control" placeholder="password"
+                         autocomplete="false">
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="mr-1 btn btn-success btn-lg float-right">Login</button>
+                  <button type="button" (click)="back()" class="mr-1 btn btn-default btn-lg float-right">Cancel</button>
+                </div>
+              </form>
             </div>
-            <form class="card-body form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                <label>Email</label>
-                <input formControlName="email" type="text" class="form-control" placeholder="john@yahoo.com" autocomplete="false">
-              </div>
-              <div class="form-group">
-                <label>Password</label>
-                <input formControlName="password" type="password" class="form-control" placeholder="password" autocomplete="false">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="mr-1 btn btn-success btn-lg float-right">Login</button>
-                <button type="button" (click)="back()" class="mr-1 btn btn-default btn-lg float-right">Cancel</button>
-              </div>
-            </form>
           </div>
         </div>
+        <!--/row-->
       </div>
-      <!--/row-->
+      <!--/col-->
     </div>
-    <!--/col-->
+    <!--/row-->
   </div>
-  <!--/row-->
+  <!--/container-->
+
+<div class="outside-form">
+  <p class="text-center">Forgot your password? <a (click)="reset()">Reset</a></p>
+
+  <p class="text-center">Not yet a member? <a routerLink="/signup">Sign up</a> here.</p>
+
+  <div class="text-center">
+    <strong>Values to be sent: </strong><span>{{loginForm.value | json}}</span>
+  </div>
 </div>
-<!--/container-->
-
-<p class="text-center">Forgot your password? <a (click)="reset()" >Reset</a></p>
-
-<p class="text-center">Not yet a member? <a routerLink="/signup">Sign up</a> here.</p>
-
-<div class="text-center">
-  <strong>Values to be sent: </strong><span>{{loginForm.value | json}}</span>
 </div>
